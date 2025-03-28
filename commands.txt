@@ -1,5 +1,15 @@
+minikube start
 kubectl cluster-info
 kubectl get nodes
 kubectl get namespaces
+kubectl get ns
 kubectl get pods -A
 kubectl get services -A
+kubectl apply -f namespace.yaml
+kubectl delete -f namespace.yaml
+
+kubectl apply -f deployment.yaml
+kubectl get deployments -n dev
+kubectl get pods -n dev
+kubectl describe pod pod-info-deployment-68c8476764-6pw2l -n dev
+kubectl exec -it busybox-6c747767dd-7xgq7 -- /bin/sh
